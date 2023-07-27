@@ -14,9 +14,25 @@ public class StringsAndThings {
      *           countYZ("day fez"); // Should return 2
      *           countYZ("day fyyyz"); // Should return 2
      */
-    public Integer countYZ(String input){
-        return null;
+    public Integer countYZ(String input) {
+        int count = 0;
+        int index = 0;
+        while (index < input.length()) {
+            if (Character.isLetter(input.charAt(index))) {
+                while (index < input.length() && Character.isLetter(input.charAt(index))) {
+                    index++;
+                }
+                if (input.charAt(index - 1) == 'y' || input.charAt(index - 1) == 'z') {
+                    count++;
+                }
+            }
+            index++;
+        }
+        return count;
     }
+
+
+
 
     /**
      * Given two strings, base and remove, return a version of the base string where all instances of the remove string have
@@ -28,7 +44,14 @@ public class StringsAndThings {
      *           removeString("Hello there", "x") // Should return "Hello there"
      */
     public String removeString(String base, String remove){
-        return null;
+        StringBuilder newString = new StringBuilder();
+        for (int i = 0; i < base.length(); i++){
+            if(base.charAt(i) != remove.charAt(0)){
+                newString.append(base.charAt(i));
+
+            }
+        }
+            return newString.toString();
     }
 
     /**
@@ -40,6 +63,7 @@ public class StringsAndThings {
      *           containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
      */
     public Boolean containsEqualNumberOfIsAndNot(String input){
+
         return null;
     }
 
@@ -51,6 +75,7 @@ public class StringsAndThings {
      *           gHappy("xxggyygxx") // Should return  false
      */
     public Boolean gIsHappy(String input){
+
         return null;
     }
 
@@ -63,6 +88,7 @@ public class StringsAndThings {
      *            countTriple("a") // Should return 0
      */
     public Integer countTriple(String input){
+
         return null;
     }
 }
