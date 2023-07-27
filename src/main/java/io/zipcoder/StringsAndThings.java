@@ -63,9 +63,21 @@ public class StringsAndThings {
      *           containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
      */
     public Boolean containsEqualNumberOfIsAndNot(String input){
-
-        return null;
+        int is = 0;
+        int not = 0;
+        for (int i = 0; i < input.length(); i++) {
+            if (input.charAt(i) == 'i' && input.charAt(i + 1) == 's') {
+                is++;
+            } else if (input.charAt(i) == 'n' && input.charAt(i + 1) == 'o' && input.charAt(i + 2) == 't') {
+                not++;
+            }
+        }
+        return is == not;
     }
+
+
+
+
 
     /**
      * We'll say that a lowercase 'g' in a string is "happy" if there is another 'g' immediately to its left or right.
